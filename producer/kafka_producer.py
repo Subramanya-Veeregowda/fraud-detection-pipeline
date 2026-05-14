@@ -9,7 +9,9 @@ fake = Faker()
 
 producer = KafkaProducer(
     bootstrap_servers='localhost:9092',
-    value_serializer=lambda v: json.dumps(v).encode('utf-8')
+    value_serializer=lambda v: json.dumps(v).encode('utf-8'),
+    acks='all',
+    retries=3
 )
 
 def generate_transaction():
@@ -26,6 +28,8 @@ while True:
     transaction = generate_transaction()
 
     producer.send("transactions", transaction)
+
+    producer.flush()
 
     print(f"Sent: {transaction}")
 
