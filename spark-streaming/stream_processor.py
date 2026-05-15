@@ -23,7 +23,7 @@ spark.sparkContext.setLogLevel("ERROR")
 # Read stream from Kafka
 df = spark.readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "localhost:9092") \
+    .option("kafka.bootstrap.servers", "kafka:9092") \
     .option("subscribe", "transactions") \
     .option("startingOffsets", "earliest") \
     .load()
