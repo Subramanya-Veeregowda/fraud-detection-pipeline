@@ -10,7 +10,6 @@ The system uses Apache Kafka for event ingestion and Apache Spark Structured Str
 ## Architecture
 
 The following diagram illustrates the proposed end-to-end data pipeline.
-![Uploading image.png…]()
 
 
 ```mermaid
@@ -213,6 +212,3 @@ The remaining components are planned development milestones and will be updated 
 - Understand fault tolerance and recovery mechanisms.
 - Develop data orchestration and analytics workflows.
 
-## License
-
-This project is intended for educational and portfolio purposes.
